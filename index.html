@@ -1,31 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f8f9f6"><meta name="description" content="Compare family life across 201 countries and territories, from health coverage and schools to household prices and Muslim communities.">
-<meta property="og:title" content="Muslim Family Map"><meta property="og:description" content="Compare monthly family budgets, groceries, healthcare and schools across countries. Explore 201 places and 21 city guides."><meta property="og:site_name" content="Muslim Family Map"><meta property="og:type" content="website"><meta property="og:url" content="https://ghanyr.github.io/muslim-family-map/"><meta property="og:image" content="https://ghanyr.github.io/muslim-family-map/family-map-preview.jpg"><meta property="og:image:alt" content="Muslim Family Map world map of Muslim communities"><meta name="twitter:card" content="summary_large_image">
-<title>Muslim Family Map</title>
-<link rel="icon" href="compass.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css">
-<script defer src="photos.js"></script><script defer src="countries.js"></script><script defer src="data.js"></script><script defer src="geography.js"></script><script defer src="city-prices.js"></script><script defer src="costs.js"></script><script defer src="app.js"></script><script defer src="charts.js"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Family Map</title>
+<link rel="canonical" href="https://ghanyr.github.io/family-map/">
+<meta property="og:title" content="Family Map">
+<meta property="og:description" content="Compare living costs, healthcare, schools and community life around the world.">
+<meta property="og:url" content="https://ghanyr.github.io/family-map/"><meta property="og:image" content="https://ghanyr.github.io/family-map/family-map-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>location.replace('https://ghanyr.github.io/family-map/' + location.search + location.hash);</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://ghanyr.github.io/family-map/"></noscript>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="mast"><div class="wrap header-in">
-<a class="wordmark" href="#home" aria-label="Muslim Family Map home"><img src="compass.svg" width="30" height="30" alt="">Muslim Family Map</a>
-<nav class="desktop-nav" aria-label="Main navigation"><a href="#home">World map</a><a href="#compare">Compare</a><a href="#budget">Living costs</a><a href="#atlas">Country directory</a></nav>
-<div class="head-actions"><a href="#saved" class="saved-nav"><span data-icon="bookmark"></span><span class="saved-label">Saved</span><span class="saved-count" hidden></span></a><button class="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span data-icon="menu"></span></button></div>
-</div><nav id="mobile-nav" hidden aria-label="Mobile navigation"><a href="#home">World map</a><a href="#compare">Compare countries</a><a href="#budget">Living costs</a><a href="#atlas">Country directory</a><a href="#about">Methods &amp; sources</a></nav></header>
-<main id="main" tabindex="-1">
-<div id="home">
-<div class="wrap">
-<section class="lead"><div><h1>Muslim family life around the world</h1><p>Compare living costs, healthcare, schools and Muslim communities across 201 countries and territories.</p></div><div class="lead-links"><a class="btn dark" href="#compare"><span data-icon="compare"></span>Compare countries</a><a class="lead-costs" href="#budget">See living costs <span aria-hidden="true">↓</span></a></div></section>
-<section id="worldstage" class="worldstage" aria-labelledby="map-title"><div class="map-heading"><div><h2 id="map-title">Muslim share of the population</h2><p id="map-meta"></p></div><button class="find-country" data-find="map"><span data-icon="search"></span>Find a country</button></div>
-<div class="map-body"><div class="map-left"><div id="map-frame"><svg id="map-svg" viewBox="0 0 960 465" role="img" aria-label="World map of estimated Muslim population shares. Use Find a country to explore every place."></svg><span id="map-hint" hidden></span></div><div id="map-legend"></div></div><div id="map-side"></div></div><div class="map-base"><div id="map-modes" role="group" aria-label="Choose map indicator"></div><a id="map-source" target="_blank" rel="noopener">Source</a></div></section>
-<section id="budget" class="budget-feature" aria-labelledby="budget-heading"></section>
-<section id="rankings" class="rank-section"><div class="rank-intro"><h2>Country rankings</h2><p>Choose an indicator and a region to see how countries compare.</p><label>Indicator<select id="rank-metric"></select></label><label>Region<select id="rank-region"></select></label><label>Order<select id="rank-order"><option value="desc">Highest first</option><option value="asc">Lowest first</option></select></label></div><div class="rank-plot"><div class="rank-title"><h3 id="rank-title"></h3><span id="rank-unit"></span></div><div id="rank-rows"></div><div class="rank-foot"><a id="rank-source" target="_blank" rel="noopener">Source data</a><div><button id="rank-prev" aria-label="Previous ranking page">‹</button><span id="rank-page"></span><button id="rank-next" aria-label="Next ranking page">›</button></div></div></div></section>
-<section id="scatter" class="scatter-section"></section><section class="atlas" id="atlas"><div class="section-intro"><div><h2>Country directory</h2><p>National indicators for every place, with local notes for 21 cities.</p></div><button class="inline-action" data-find="profile"><span data-icon="search"></span>Find a country</button></div><div class="dir-tools"><label class="search-label"><span data-icon="search"></span><input id="dir-search" type="search" placeholder="Search countries, territories or cities" aria-label="Search the country directory"></label><select id="dir-region" aria-label="Filter directory by region"></select><label class="only-guides"><input type="checkbox" id="guides-only"> City guides only</label></div><div id="dir-count" class="list-count"></div><div id="dir-list"></div><button id="dir-more" class="btn plain-btn">Show more countries</button></section>
-</div></div><div id="detail" class="wrap subview" hidden></div></main>
-<footer><div class="wrap foot"><a class="wordmark footer-brand" href="#home"><img src="compass.svg" width="24" height="24" alt="">Muslim Family Map</a><a href="#about">Methods &amp; sources</a></div></footer>
-<dialog id="picker"><div class="picker-head"><h2 id="picker-title">Find a country</h2><button id="picker-close" aria-label="Close country search"><span data-icon="close"></span></button></div><input id="picker-input" type="search" autocomplete="off" placeholder="Search a country, territory or city" aria-label="Search countries and territories"><div id="picker-list"></div></dialog><div id="toast" role="status" aria-live="polite"></div><div id="announcer" class="sr" role="status" aria-live="polite"></div>
-</body></html>
+<body><p><a href="https://ghanyr.github.io/family-map/">Open Family Map</a></p></body>
+</html>
